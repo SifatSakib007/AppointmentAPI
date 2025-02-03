@@ -16,9 +16,6 @@ The API is designed to manage patient appointments for a healthcare clinic, feat
 8. [Testing the API](#testing-the-api)
 9. [Error Handling](#error-handling)
 10. [Bonus Features](#bonus-features)
-11. [Submission Details](#submission-details)
-12. [FAQs](#faqs)
-13. [Support](#support)
 
 ---
 
