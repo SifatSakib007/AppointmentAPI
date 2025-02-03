@@ -1,0 +1,72 @@
+@AppointmentAPI_HostAddress = http://localhost:5087
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2lmYXRzYWtpYjI2IiwiZXhwIjoxNzM4NTIwMTI5LCJpc3MiOiJKd3RJc3N1ZXIiLCJhdWQiOiJKd3RBdWRpZW5jZSJ9.pyiAFDlMjvi4_h4QPcp2tAKsNJie-dDrtH-D8Khly0s
+
+# GET {{AppointmentAPI_HostAddress}}/weatherforecast/
+# Accept: application/json
+
+###
+
+
+POST {{AppointmentAPI_HostAddress}}/api/Auth/register
+Content-Type: application/json
+
+{
+  "userName": "sifatsakib26",
+  "password": "123456"
+}
+
+###
+
+GET {{AppointmentAPI_HostAddress}}/api/Appointment/check-auth
+Authorization: Bearer {{token}}
+
+### 
+
+POST {{AppointmentAPI_HostAddress}}/api/Auth/login
+Content-Type: application/json
+
+{
+  "username": "sifatsakib26",
+  "password": "123456"
+}
+
+### Create an Appointment
+
+
+POST {{AppointmentAPI_HostAddress}}/api/Appointment
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "patientName": "Sifat Sakib sssss",
+  "patentContact": "abir@example.com",
+  "appointmentDateTime": "2025-07-02T10:30:00",
+  "doctorId": 2
+}
+
+
+
+
+### Get All Appointments
+GET {{AppointmentAPI_HostAddress}}/api/Appointment
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2lmYXRzYWtpYjI2IiwiZXhwIjoxNzM4NTEwODMzfQ.IvxkvGzTWIn9U_sCSEObMZ0rdMr8GqXV26ZI4a9lktM
+
+### Get Appointment by ID
+GET {{AppointmentAPI_HostAddress}}/api/Appointment/2
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2lmYXRzYWtpYjI2IiwiZXhwIjoxNzM4NTEwODMzfQ.IvxkvGzTWIn9U_sCSEObMZ0rdMr8GqXV26ZI4a9lktM
+
+### Update an Appointment
+PUT {{AppointmentAPI_HostAddress}}/api/Appointment/1
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2lmYXRzYWtpYjI2IiwiZXhwIjoxNzM4NTEwODMzfQ.IvxkvGzTWIn9U_sCSEObMZ0rdMr8GqXV26ZI4a9lktM
+Content-Type: application/json
+
+{
+  "patientName": "Talha",
+  "patentContact": "jane@example.com",
+  "appointmentDateTime": "2025-02-05T15:00:00",
+  "doctorId": 2
+}
+
+### Delete an Appointment
+DELETE {{AppointmentAPI_HostAddress}}/api/Appointment/3
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2lmYXRzYWtpYjI2IiwiZXhwIjoxNzM4NTEwODMzfQ.IvxkvGzTWIn9U_sCSEObMZ0rdMr8GqXV26ZI4a9lktM
